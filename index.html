@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <title>prestocarto.xyz</title>
+        <link href="style.css" rel="stylesheet"/>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
+
+    </head>
+    <body>
+        <div id="sidebar">
+            <h1>prestocarto.<span class="red" >xyz</span></h1>
+            <em>paste a csv, make a map</em>
+            <p></p>
+            <div id="input">
+                <strong>delimiter: </strong>
+                <select id="delimiter" name="">
+                    <option value="auto">auto</option>
+                    <option value=",">comma</option>
+                    <option value="\t">tab</option>
+                </select><br/>
+                <strong>fieldnames: </strong><br/>
+                latitude: <input id="latField" type="text" value="Latitude"/>
+                longitude: <input id="lngField" type="text" value="Longitude"/><br/>
+                <textarea cols="30" id="data" name="" rows="10"></textarea>
+                <button onclick="makeMap()">Map it!</button>
+            </div> 
+        </div>
+        <div id="map"></div>
+        <script src="map.js"></script>
+    </body>
+</html>

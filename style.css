@@ -1,0 +1,19 @@
+#sidebar {
+    display: block;
+    float: left;
+    background-color: block;
+    width: 20%;
+    padding: 0em 1em 0em .5em;
+}
+
+#map {
+    float: right;
+    width: 75%;
+    height: 95vh;
+}
+body {
+    background: #fcfcfa;
+    font-family: sans-serif;
+}
+
+.red { color: #f00; }
