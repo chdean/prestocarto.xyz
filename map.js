@@ -18,6 +18,7 @@ function makeMap() {
         lonfield: lngField,
         delimiter: delimiter
     }, function(err, data) {
+
         if (map.getLayer('points')) {
             map.removeLayer('points');
             map.removeSource('points');
@@ -33,6 +34,10 @@ function makeMap() {
                 'icon-image': 'circle-15'
             }
         });
+
+        map.fitBounds(turf.bbox(data),
+                      {padding: 30});
+
     });
 }
 

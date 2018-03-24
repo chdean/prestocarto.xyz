@@ -4,12 +4,13 @@
     background-color: block;
     width: 20%;
     padding: 0em 1em 0em .5em;
+    margin-right: 2em;
 }
 
 #map {
+    display: block
     float: right;
-    width: 75%;
-    height: 95vh;
+    height: 96vh;
 }
 body {
     background: #fcfcfa;
