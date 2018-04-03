@@ -1,8 +1,7 @@
 #sidebar {
     display: block;
     float: left;
-    background-color: block;
-    width: 20%;
+    width: 200px;
     padding: 0em 1em 0em .5em;
     margin-right: 2em;
 }
