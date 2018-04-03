@@ -17,11 +17,11 @@ body {
 
 .red { color: #f00; }
 
-#subtitle {
+.subtitle {
     font-style: italic;
 }
 
-#label {
+.label {
     font-variant: small-caps;
     font-weight: bold;
 }
