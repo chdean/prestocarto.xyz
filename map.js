@@ -38,6 +38,35 @@ function makeMap() {
         map.fitBounds(turf.bbox(data),
                       {padding: 30});
 
+        map.on('click', 'points', function (e) {
+            var feature = e.features[0];
+            var coordinates = feature.geometry.coordinates.slice();
+
+            var keys = Object.keys(feature.properties);
+            var lines = [];
+            for (k in keys) {
+                lines.push('<p><strong>' + keys[k] + ':</strong> ' + feature.properties[keys[k]] + '</p>');
+            }
+
+            var description = lines.join('');
+
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+        });
+
+        map.on('mouseenter', 'points', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', 'points', function () {
+            map.getCanvas().style.cursor = '';
+        });
     });
 }
 
