@@ -7,11 +7,11 @@ var map = new mapboxgl.Map({
 });
 
 function makeMap() {
-    var dsvString = document.getElementById('data').value;
+    var dsvString = $('#data').val();
 
-    var delimiter = document.getElementById('delimiter').value;
-    var latField = document.getElementById('latField').value;
-    var lngField = document.getElementById('lngField').value;
+    var delimiter = $('#delimiter').val();
+    var latField = $('#latField').val();
+    var lngField = $('#lngField').val();
 
     csv2geojson.csv2geojson(dsvString, {
         latfield: latField,
