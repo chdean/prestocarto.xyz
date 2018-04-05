@@ -6,6 +6,17 @@ var map = new mapboxgl.Map({
     zoom: 3
 });
 
+const url = new URL(location.href);
+const params = {lat: '#latField',
+                lng: '#lngField',
+                label: '#labelField'};
+
+for (key in params) {
+    if (url.searchParams.get(key)) {
+        $(params[key]).val(url.searchParams.get(key));
+    }
+}
+
 function makeMap() {
     var dsvString = $('#data').val();
 
@@ -34,7 +45,9 @@ function makeMap() {
             },
             'layout': {
                 'icon-image': 'circle-15',
-                'text-field': labels
+                'text-field': labels,
+                'text-anchor': 'bottom-left',
+                'text-offset': [.5,-.5]
             }
         });
 
