@@ -24,8 +24,11 @@ function makeMap() {
     var latField = $('#latField').val();
     var lngField = $('#lngField').val();
 
-    var labels = '{' + $('#labelField').val() + '}';
-
+    var labels = '';
+    if ($('#labelField').val()) {
+        labels = '{' + $('#labelField').val() + '}';
+    }
+    
     csv2geojson.csv2geojson(dsvString, {
         latfield: latField,
         lonfield: lngField,
