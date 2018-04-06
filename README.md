@@ -9,9 +9,9 @@ Paste comma or tab delimited text and enter the field names containing geometry.
 
 Prestocarto also supports specifying field names in the URL query string:
 
-- lat: Latitude field
-- lng: Longitude field
-- label: Label field
+- lat: Latitude
+- lng: Longitude
+- label: Label
 
 eg http://prestocarto.xyz?lat=Y&lng=X&label=NAME.
 
